@@ -139,7 +139,7 @@ export function FeatureSection() {
           >
             {/* Background Image */}
             <Image
-              src="/images/products/0ed61900-dd29-4dd2-bc2d-abc2db54c352.png"
+              src="/images/0ed61900-dd29-4dd2-bc2d-abc2db54c352.png"
               alt="Natural ingredients"
               fill
               className="object-cover"

@@ -6,6 +6,8 @@ import Link from "next/link"
 import { ShoppingBag } from "lucide-react"
 import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
+import { CTABanner } from "@/components/boty/cta-banner"
+import { useCart } from "@/components/boty/cart-context"
 
 const products = [
   // Core Product - GlowMed Acne Face Wash
@@ -114,6 +116,7 @@ export default function ShopPage() {
           </div>
         </div>
       </div>
+                <CTABanner />
 
       <Footer />
     </main>
@@ -130,6 +133,7 @@ function ProductCard({
   isVisible: boolean
 }) {
   const [imageLoaded, setImageLoaded] = useState(false)
+  const { addItem } = useCart()
 
   return (
     <Link
@@ -178,6 +182,14 @@ function ProductCard({
             className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
             onClick={(e) => {
               e.preventDefault()
+              e.stopPropagation()
+              addItem({
+                id: product.id,
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                image: product.image
+              })
             }}
             aria-label="Add to cart"
           >
@@ -190,10 +202,10 @@ function ProductCard({
           <h3 className="font-serif text-xl text-foreground mb-1">{product.name}</h3>
           <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
           <div className="flex items-center gap-2">
-            <span className="text-lg font-medium text-foreground">${product.price}</span>
+            <span className="text-lg font-medium text-foreground">Rs. {product.price}</span>
             {product.originalPrice && (
               <span className="text-sm text-muted-foreground line-through">
-                ${product.originalPrice}
+                Rs. {product.originalPrice}
               </span>
             )}
           </div>
