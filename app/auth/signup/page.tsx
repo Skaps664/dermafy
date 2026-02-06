@@ -5,6 +5,9 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Mail, Lock, Phone, ArrowRight } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { auth, db } from "@/lib/firebase"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { doc, setDoc } from "firebase/firestore"
 
 export default function SignUpPage() {
   const router = useRouter()
@@ -39,14 +42,26 @@ export default function SignUpPage() {
 
     setIsLoading(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      // Store user data in localStorage (simplified auth)
-      localStorage.setItem("user", JSON.stringify({
+    try {
+      // Create user with Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      )
+
+      // Update profile with display name
+      await updateProfile(userCredential.user, {
+        displayName: formData.name,
+      })
+
+      // Save additional user data to Firestore
+      await setDoc(doc(db, "users", userCredential.user.uid), {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-      }))
+        createdAt: new Date().toISOString(),
+      })
       
       toast({
         title: "Account created!",
@@ -55,7 +70,14 @@ export default function SignUpPage() {
       
       setIsLoading(false)
       router.push("/account")
-    }, 1000)
+    } catch (error: any) {
+      setIsLoading(false)
+      toast({
+        title: "Sign up failed",
+        description: error.message || "Something went wrong. Please try again.",
+        variant: "destructive",
+      })
+    }
   }
 
   return (

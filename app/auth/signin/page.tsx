@@ -5,6 +5,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Mail, Lock, ArrowRight } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { auth } from "@/lib/firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 
 export default function SignInPage() {
   const router = useRouter()
@@ -26,34 +28,25 @@ export default function SignInPage() {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      // Check if user exists in localStorage (simplified auth)
-      const storedUser = localStorage.getItem("user")
+    try {
+      // Sign in with Firebase Auth
+      await signInWithEmailAndPassword(auth, formData.email, formData.password)
       
-      if (storedUser) {
-        toast({
-          title: "Welcome back!",
-          description: "You've successfully signed in.",
-        })
-        router.push("/account")
-      } else {
-        // For demo, create a basic user
-        localStorage.setItem("user", JSON.stringify({
-          name: "Demo User",
-          email: formData.email,
-          phone: "+92 300 0000000",
-        }))
-        
-        toast({
-          title: "Signed in!",
-          description: "Welcome to Dermafy.",
-        })
-        router.push("/account")
-      }
+      toast({
+        title: "Welcome back!",
+        description: "You've successfully signed in.",
+      })
       
       setIsLoading(false)
-    }, 1000)
+      router.push("/account")
+    } catch (error: any) {
+      setIsLoading(false)
+      toast({
+        title: "Sign in failed",
+        description: error.message || "Invalid email or password.",
+        variant: "destructive",
+      })
+    }
   }
 
   return (

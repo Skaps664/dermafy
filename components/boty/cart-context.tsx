@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useState, type ReactNode } from "react"
 import { useToast } from "@/hooks/use-toast"
-import { ShoppingBag } from "lucide-react"
 
 export interface CartItem {
   id: string
@@ -33,32 +32,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const { toast } = useToast()
 
   const addItem = (newItem: Omit<CartItem, "quantity">) => {
-    setItems(currentItems => {
-      const existingItem = currentItems.find(item => item.id === newItem.id)
-      if (existingItem) {
-        toast({
-          title: "Updated cart",
-          description: `${newItem.name} quantity increased`,
-          duration: 2000,
-        })
-        return currentItems.map(item =>
+    const existingItem = items.find(item => item.id === newItem.id)
+    
+    if (existingItem) {
+      setItems(currentItems =>
+        currentItems.map(item =>
           item.id === newItem.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
-      }
+      )
       toast({
-        title: (
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="w-4 h-4" />
-            <span>Added to cart</span>
-          </div>
-        ),
+        title: "Updated cart",
+        description: `${newItem.name} quantity increased`,
+        duration: 2000,
+      })
+    } else {
+      setItems(currentItems => [...currentItems, { ...newItem, quantity: 1 }])
+      toast({
+        title: "Added to cart",
         description: `${newItem.name} - Rs. ${newItem.price}`,
         duration: 2000,
       })
-      return [...currentItems, { ...newItem, quantity: 1 }]
-    })
+    }
   }
 
   const removeItem = (id: string) => {

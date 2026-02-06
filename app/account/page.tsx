@@ -7,6 +7,9 @@ import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
 import { User, Mail, Phone, Package, LogOut, ChevronRight } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { auth, db } from "@/lib/firebase"
+import { signOut, onAuthStateChanged } from "firebase/auth"
+import { collection, query, where, orderBy, getDocs, doc, getDoc } from "firebase/firestore"
 
 interface UserData {
   name: string
@@ -16,8 +19,9 @@ interface UserData {
 
 interface Order {
   id: string
-  date: string
-  status: "Processing" | "Shipped" | "Delivered"
+  orderNumber: string
+  createdAt: string
+  status: string
   total: number
   items: {
     name: string
@@ -26,57 +30,79 @@ interface Order {
   }[]
 }
 
-// Demo orders
-const demoOrders: Order[] = [
-  {
-    id: "ORD-2026-001",
-    date: "February 3, 2026",
-    status: "Delivered",
-    total: 4500,
-    items: [
-      { name: "GlowMed Acne Face Wash", quantity: 1, price: 1450 },
-      { name: "Daily Moisturizer", quantity: 1, price: 1250 },
-      { name: "Daily Sunscreen SPF 30+", quantity: 1, price: 1350 },
-      { name: "Gentle Face Towel", quantity: 1, price: 450 }
-    ]
-  },
-  {
-    id: "ORD-2026-002",
-    date: "January 28, 2026",
-    status: "Processing",
-    total: 1450,
-    items: [
-      { name: "GlowMed Acne Face Wash", quantity: 1, price: 1450 }
-    ]
-  }
-]
-
 export default function AccountPage() {
   const router = useRouter()
   const { toast } = useToast()
   const [user, setUser] = useState<UserData | null>(null)
-  const [orders] = useState<Order[]>(demoOrders)
+  const [orders, setOrders] = useState<Order[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Check if user is logged in
-    const storedUser = localStorage.getItem("user")
-    if (!storedUser) {
-      router.push("/auth/signin")
-      return
-    }
-    setUser(JSON.parse(storedUser))
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (!firebaseUser) {
+        router.push("/auth/signin")
+        return
+      }
+
+      try {
+        // Fetch user data from Firestore
+        const userDoc = await getDoc(doc(db, "users", firebaseUser.uid))
+        if (userDoc.exists()) {
+          const userData = userDoc.data()
+          setUser({
+            name: userData.name || firebaseUser.displayName || "User",
+            email: userData.email || firebaseUser.email || "",
+            phone: userData.phone || ""
+          })
+        } else {
+          // Fallback to Firebase auth data
+          setUser({
+            name: firebaseUser.displayName || "User",
+            email: firebaseUser.email || "",
+            phone: ""
+          })
+        }
+
+        // Fetch user's orders
+        const ordersQuery = query(
+          collection(db, "orders"),
+          where("userId", "==", firebaseUser.uid),
+          orderBy("createdAt", "desc")
+        )
+        const ordersSnapshot = await getDocs(ordersQuery)
+        const ordersData = ordersSnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        })) as Order[]
+        setOrders(ordersData)
+      } catch (error) {
+        console.error("Error fetching user data:", error)
+      } finally {
+        setLoading(false)
+      }
+    })
+
+    return () => unsubscribe()
   }, [router])
 
-  const handleLogout = () => {
-    localStorage.removeItem("user")
-    toast({
-      title: "Signed out",
-      description: "You've been successfully signed out.",
-    })
-    router.push("/")
+  const handleLogout = async () => {
+    try {
+      await signOut(auth)
+      toast({
+        title: "Signed out",
+        description: "You've been successfully signed out.",
+      })
+      router.push("/")
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to sign out. Please try again.",
+        variant: "destructive",
+      })
+    }
   }
 
-  if (!user) {
+  if (loading || !user) {
     return null // Loading state while checking auth
   }
 
@@ -160,17 +186,25 @@ export default function AccountPage() {
                         <div className="flex items-start justify-between mb-4">
                           <div>
                             <h3 className="font-medium text-foreground mb-1">
-                              Order {order.id}
+                              Order {order.orderNumber}
                             </h3>
-                            <p className="text-sm text-muted-foreground">{order.date}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {new Date(order.createdAt).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric"
+                              })}
+                            </p>
                           </div>
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              order.status === "Delivered"
-                                ? "bg-green-100 text-green-700"
-                                : order.status === "Shipped"
-                                ? "bg-blue-100 text-blue-700"
-                                : "bg-yellow-100 text-yellow-700"
+                            className={`px-3 py-1 rounded-full text-xs font-medium capitalize ${
+                              order.status === "delivered"
+                                ? "bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                                : order.status === "shipped"
+                                ? "bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400"
+                                : order.status === "processing"
+                                ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/20 dark:text-yellow-400"
+                                : "bg-gray-100 text-gray-700 dark:bg-gray-900/20 dark:text-gray-400"
                             }`}
                           >
                             {order.status}
