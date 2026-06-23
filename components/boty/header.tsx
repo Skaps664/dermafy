@@ -32,17 +32,18 @@ export function Header() {
             >
               Buy Now
             </Link>
-            <Link
-              href="/about"
-              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
-            >
-              About
-            </Link>
+            
             <Link
               href="/about/ingredients"
               className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
             >
               Ingredients
+            </Link>
+            <Link
+              href="/about"
+              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
+            >
+              About
             </Link>
           </div>
 
@@ -87,22 +88,23 @@ export function Header() {
         >
           <div className="flex flex-col gap-4 pt-4 border-t border-border/50">
             <Link
-              href="/shop"
+              href="/product/glowify-brightening-face-wash"
               className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
             >
-              Shop
+              Buy Now
+            </Link>
+            
+            <Link
+              href="/about/ingredients"
+              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
+            >
+              Ingredients
             </Link>
             <Link
               href="/about"
               className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
             >
               About
-            </Link>
-            <Link
-              href="/about/ingredients"
-              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
-            >
-              Ingredients
             </Link>
             <Link
               href="/contact"
