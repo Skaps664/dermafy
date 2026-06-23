@@ -10,12 +10,12 @@ import { CTABanner } from "@/components/boty/cta-banner"
 import { useCart } from "@/components/boty/cart-context"
 
 const products = [
-  // Core Product - GlowMed Acne Face Wash
+  // Core Product - Glowify Acne Face Wash
   {
-    id: "glowmed-acne-facewash",
-    name: "GlowMed Acne Face Wash",
+    id: "Glowify-acne-facewash",
+    name: "Glowify Acne Face Wash",
     description: "Dual-acid formula (Salicylic + Glycolic) for oily, acne-prone skin",
-    price: 1450,
+    price: 1500,
     originalPrice: null,
     image: "/images/products/serum-bottles-1.png",
     badge: "Bestseller",
@@ -90,7 +90,7 @@ export default function ShopPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <span className="text-sm tracking-[0.3em] uppercase text-primary mb-4 block">
-              GlowMed System
+              Glowify System
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 text-balance">
               Pharmaceutical Acne Control

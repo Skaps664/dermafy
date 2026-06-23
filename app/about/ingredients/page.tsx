@@ -15,7 +15,7 @@ export default function IngredientsPage() {
               Active Ingredients
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 text-balance">
-              What's Inside GlowMed
+              What's Inside Glowify
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Pharmaceutical-grade ingredients chosen for their clinical effectiveness in treating oily, acne-prone skin.

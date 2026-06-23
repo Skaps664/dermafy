@@ -47,7 +47,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have questions about GlowMed or need skincare advice? We're here to help.
+              Have questions about Glowify or need skincare advice? We're here to help.
             </p>
           </div>
 

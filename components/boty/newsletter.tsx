@@ -18,23 +18,23 @@ export function Newsletter() {
   }
 
   return (
-    <section className="py-24 bg-primary">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-primary">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-serif text-4xl leading-tight text-primary-foreground mb-4 text-balance md:text-7xl">
+          <h2 className="font-serif text-4xl sm:text-5xl leading-tight text-primary-foreground mb-3 sm:mb-4 text-balance md:text-7xl">
             Stay updated
           </h2>
-          <p className="text-lg text-primary-foreground/80 mb-10">
-            Subscribe for acne care tips, clinical updates, and exclusive product launches.
+          <p className="text-base sm:text-lg text-primary-foreground/80 mb-8 md:mb-10">
+            Acne care tips and exclusive launches.
           </p>
 
           {isSubscribed ? (
-            <div className="inline-flex items-center gap-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-8 py-4">
+            <div className="inline-flex items-center gap-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-6 py-3 sm:px-8 sm:py-4">
               <Check className="w-5 h-5 text-primary-foreground" />
-              <span className="text-primary-foreground">Thank you for subscribing!</span>
+              <span className="text-primary-foreground text-sm sm:text-base">Thank you for subscribing!</span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 value={email}
@@ -53,8 +53,8 @@ export function Newsletter() {
             </form>
           )}
 
-          <p className="text-sm text-primary-foreground/60 mt-6">
-            Unsubscribe anytime. We respect your inbox.
+          <p className="text-xs sm:text-sm text-primary-foreground/60 mt-5 sm:mt-6">
+            Unsubscribe anytime.
           </p>
         </div>
       </div>

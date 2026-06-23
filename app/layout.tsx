@@ -20,7 +20,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Dermafy — Pharmaceutical Acne Control',
-  description: 'GlowMed Acne Care System: pharmaceutical-grade skincare for oily, acne-prone skin in hot, humid climates.',
+  description: 'Glowify Acne Care System: pharmaceutical-grade skincare for oily, acne-prone skin in hot, humid climates.',
   generator: 'v0.app',
   keywords: ['acne treatment', 'pharmaceutical skincare', 'salicylic acid', 'glycolic acid', 'oily skin', 'acne-prone', 'DRAP registered'],
   icons: {

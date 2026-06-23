@@ -32,25 +32,38 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full pt-20 mr-14 lg:mr-0">
+      <div className="relative z-10 w-full pt-24 lg:pt-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="w-full lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            {/* <span className="text-sm uppercase mb-6 block text-black animate-blur-in opacity-0 tracking-normal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              Pharmaceutical Acne Control
-            </span> */}
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1] mb-6 text-balance text-black">
-              <span className="block animate-blur-in opacity-0 font-semibold" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>When gentle fails,</span>
-              <span className="block animate-blur-in opacity-0 font-semibold xl:text-9xl text-7xl" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>science works.</span>
+            <h2 className="font-serif leading-[1.05] mb-6 text-balance text-black">
+              <span
+                className="block animate-blur-in opacity-0 font-semibold text-3xl sm:text-4xl md:text-5xl"
+                style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+              >
+                When gentle fails,
+              </span>
+              <span
+                className="block animate-blur-in opacity-0 font-semibold text-5xl sm:text-6xl md:text-7xl xl:text-9xl"
+                style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
+              >
+                science works.
+              </span>
             </h2>
-            <p className="text-lg leading-relaxed mb-10 max-w-md mx-auto lg:mx-0 text-black animate-blur-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-              Dual-acid wash-off formula designed for oily, acne-prone skin in hot, humid climates where cosmetic facewashes fail.
+            <p
+              className="text-base sm:text-lg leading-relaxed mb-8 max-w-sm mx-auto lg:mx-0 text-black animate-blur-in opacity-0"
+              style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
+            >
+              Dual-acid acne face wash. Built for oily, acne-prone skin.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-blur-in opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
+            <div
+              className="flex justify-center lg:justify-start animate-blur-in opacity-0"
+              style={{ animationDelay: '1s', animationFillMode: 'forwards' }}
+            >
               <Link
-                href="/shop"
+                href="/product/Glowify-acne-facewash"
                 className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-primary/90 boty-shadow"
               >
-                Shop Now
+                Shop Glowify
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 boty-transition" />
               </Link>
             </div>
@@ -58,8 +71,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-black">
+      {/* Scroll indicator — desktop only to save vertical space on phones */}
+      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-black">
         <span className="text-xs tracking-widest uppercase font-bold">Scroll</span>
         <div className="w-px h-12 bg-foreground/20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1/2 bg-foreground/60 animate-pulse" />

@@ -9,16 +9,17 @@ import { useCart } from "./cart-context"
 type Category = "complete-care"
 
 const products = [
-  // Core Product - GlowMed Acne Face Wash
+  // Core Product - Glowify Acne Face Wash
   {
-    id: "glowmed-acne-facewash",
-    name: "GlowMed Acne Face Wash",
+    id: "Glowify-acne-facewash",
+    name: "Glowify Acne Face Wash",
     description: "Dual-acid formula (Salicylic + Glycolic) for oily, acne-prone skin",
-    price: 1450,
+    price: 1500,
     originalPrice: null,
-    image: "/images/products/serum-bottles-1.png",
+    image: "/glowify/glowify-hero-2.png",
     badge: "Bestseller",
-    category: "complete-care" as Category
+    category: "complete-care" as Category,
+    inStock: true
   },
   // Daily Moisturizer
   {
@@ -29,7 +30,8 @@ const products = [
     originalPrice: null,
     image: "/images/products/cream-jars-colored.png",
     badge: "Essential",
-    category: "complete-care" as Category
+    category: "complete-care" as Category,
+    inStock: false
   },
   // Daily Sunscreen
   {
@@ -40,7 +42,8 @@ const products = [
     originalPrice: null,
     image: "/images/products/pump-bottles-lavender.png",
     badge: "Essential",
-    category: "complete-care" as Category
+    category: "complete-care" as Category,
+    inStock: false
   },
   // Gentle Face Towel
   {
@@ -51,7 +54,8 @@ const products = [
     originalPrice: null,
     image: "/images/products/jars-wooden-lid.png",
     badge: null,
-    category: "complete-care" as Category
+    category: "complete-care" as Category,
+    inStock: false
   }
 ]
 
@@ -116,7 +120,7 @@ export function ProductGrid() {
             Complete Care
           </span>
           <h2 className={`font-serif leading-tight text-foreground mb-4 text-balance text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
-            GlowMed System
+            Glowify System
           </h2>
           <p className={`text-lg text-muted-foreground max-w-md mx-auto ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
             Complete pharmaceutical-grade acne control for oily, acne-prone skin
@@ -128,75 +132,91 @@ export function ProductGrid() {
           ref={gridRef}
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {products.map((product, index) => (
-            <Link
-              key={product.id}
-              href={`/product/${product.id}`}
-              className={`group transition-all duration-500 ease-out ${
-                isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-              }`}
-              style={{ transitionDelay: `${index * 80}ms` }}
-            >
-              <div className="bg-background rounded-3xl overflow-hidden boty-shadow boty-transition group-hover:scale-[1.02]">
-                {/* Image */}
-                <div className="relative aspect-square bg-muted overflow-hidden">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    fill
-                    className="object-cover boty-transition group-hover:scale-105"
-                  />
-                  {/* Badge */}
-                  {product.badge && (
-                    <span
-                      className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide bg-white text-black ${
-                        product.badge === "Sale"
-                          ? "bg-destructive/10 text-destructive"
-                          : product.badge === "New"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-accent text-accent-foreground"
-                      }`}
-                    >
-                      {product.badge}
-                    </span>
-                  )}
-                  {/* Quick add button */}
-                  <button
-                    type="button"
-                    className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      addItem({
-                        id: product.id,
-                        name: product.name,
-                        description: product.description,
-                        price: product.price,
-                        image: product.image
-                      })
-                    }}
-                    aria-label="Add to cart"
-                  >
-                    <ShoppingBag className="w-4 h-4 text-foreground" />
-                  </button>
-                </div>
-
-                {/* Info */}
-                <div className="p-5">
-                  <h3 className="font-serif text-lg text-foreground mb-1">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{product.description}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-foreground">${product.price}</span>
-                    {product.originalPrice && (
-                      <span className="text-sm text-muted-foreground line-through">
-                        ${product.originalPrice}
+          {products.map((product, index) => {
+            const CardWrapper = product.inStock ? Link : "div"
+            const wrapperProps = product.inStock
+              ? { href: `/product/${product.id}` }
+              : {}
+            return (
+              <CardWrapper
+                key={product.id}
+                {...(wrapperProps as any)}
+                className={`group transition-all duration-500 ease-out ${
+                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                } ${!product.inStock ? 'cursor-default' : ''}`}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <div className={`bg-background rounded-3xl overflow-hidden boty-shadow boty-transition ${product.inStock ? 'group-hover:scale-[1.02]' : ''}`}>
+                  {/* Image */}
+                  <div className="relative aspect-square bg-muted overflow-hidden">
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      fill
+                      className={`object-cover boty-transition ${product.inStock ? 'group-hover:scale-105' : 'opacity-60'}`}
+                    />
+                    {/* Badge */}
+                    {!product.inStock ? (
+                      <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide bg-muted-foreground/20 text-muted-foreground backdrop-blur-sm">
+                        Coming Soon
+                      </span>
+                    ) : product.badge && (
+                      <span
+                        className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide bg-white text-black ${
+                          product.badge === "Sale"
+                            ? "bg-destructive/10 text-destructive"
+                            : product.badge === "New"
+                            ? "bg-primary/10 text-primary"
+                            : "bg-accent text-accent-foreground"
+                        }`}
+                      >
+                        {product.badge}
                       </span>
                     )}
+                    {/* Quick add button — only for in-stock */}
+                    {product.inStock && (
+                      <button
+                        type="button"
+                        className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          addItem({
+                            id: product.id,
+                            name: product.name,
+                            description: product.description,
+                            price: product.price,
+                            image: product.image
+                          })
+                        }}
+                        aria-label="Add to cart"
+                      >
+                        <ShoppingBag className="w-4 h-4 text-foreground" />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-5">
+                    <h3 className="font-serif text-lg text-foreground mb-1">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{product.description}</p>
+                    <div className="flex items-center gap-2">
+                      {product.inStock ? (
+                        <span className="font-medium text-foreground">Rs. {product.price}</span>
+                      ) : (
+                        <span className="text-sm text-muted-foreground italic">Available soon</span>
+                      )}
+                      {product.inStock && product.originalPrice && (
+                        <span className="text-sm text-muted-foreground line-through">
+                          Rs. {product.originalPrice}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </CardWrapper>
+            )
+          })}
         </div>
 
         {/* View All Button */}

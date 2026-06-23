@@ -89,16 +89,16 @@ export function FeatureSection() {
   }, [])
 
   return (
-    <section className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Bento Grid */}
         <div 
           ref={bentoRef}
-          className="grid md:grid-cols-4 mb-20 md:grid-rows-[300px_300px] gap-6"
+          className="grid md:grid-cols-4 mb-16 md:mb-20 md:grid-rows-[300px_300px] gap-4 md:gap-6"
         >
           {/* Left Large Block - Video with Overlay Card */}
           <div 
-            className={`relative rounded-3xl overflow-hidden h-[500px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out ${
+            className={`relative rounded-3xl overflow-hidden h-[420px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '0ms' }}
@@ -113,17 +113,14 @@ export function FeatureSection() {
               <source src="/images/c4baaf67-b900-4b90-af2a-daf25a5a4b78.mp4" type="video/mp4" />
             </video>
             {/* Overlay Card */}
-            <div className="absolute bottom-8 left-8 right-8 bg-white p-6 shadow-lg rounded-xl">
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 bg-white p-5 md:p-6 shadow-lg rounded-xl">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0">
-                  
-                </div>
                 <div>
-                  <h3 className="text-xl text-foreground mb-2 font-medium">
-                    Dual-Acid <span className="">Formula</span>
+                  <h3 className="text-lg md:text-xl text-foreground mb-1.5 font-medium">
+                    Dual-Acid Formula
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Salicylic and glycolic acids combined for superior oil control, pore clearing, and acne resolution.
+                    Salicylic + glycolic acids for oil control and clear pores.
                   </p>
                 </div>
               </div>
@@ -132,7 +129,7 @@ export function FeatureSection() {
 
           {/* Top Right - 100% Natural */}
           <div 
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center md:col-span-2 relative overflow-hidden transition-all duration-700 ease-out ${
+            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center md:col-span-2 relative overflow-hidden h-[280px] md:h-auto transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '100ms' }}
@@ -173,7 +170,7 @@ export function FeatureSection() {
 
           {/* Bottom Right - Eco-Friendly Packaging */}
           <div 
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden md:col-span-2 transition-all duration-700 ease-out ${
+            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden md:col-span-2 h-[220px] md:h-auto transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '200ms' }}
@@ -207,7 +204,7 @@ export function FeatureSection() {
 
         <div 
           ref={videoSectionRef}
-          className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center my-0 py-20"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center my-0 py-12 md:py-20"
         >
           {/* Video */}
           <div 
@@ -234,28 +231,28 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <span className={`text-sm tracking-[0.3em] uppercase text-primary mb-4 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+            <span className={`text-xs sm:text-sm tracking-[0.25em] uppercase text-primary mb-3 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
               Why This Works
             </span>
-            <h2 className={`font-serif text-4xl leading-tight text-foreground mb-6 text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
+            <h2 className={`font-serif text-4xl sm:text-5xl leading-tight text-foreground mb-4 md:mb-6 text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
               Science, not gentleness.
             </h2>
-            <p className={`text-lg text-muted-foreground leading-relaxed mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
-              Salicylic and glycolic acids work where cosmetic formulas fail. Wash-off formula minimizes irritation while delivering clinical results for oily, acne-prone skin.
+            <p className={`text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
+              Acids that work where cosmetics fail. Clinical results, gentle on the barrier.
             </p>
 
             {/* Feature Cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="group p-5 boty-transition hover:scale-[1.02] rounded-md bg-white"
+                  className="group p-4 sm:p-5 boty-transition hover:scale-[1.02] rounded-md bg-white"
                 >
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-3 group-hover:bg-primary/20 boty-transition bg-stone-50">
                     <feature.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-medium text-foreground mb-1">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-medium text-sm sm:text-base text-foreground mb-1">{feature.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
             </div>

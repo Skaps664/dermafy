@@ -18,7 +18,7 @@ export default function ShippingPage() {
               Shipping Policy
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Fast and reliable delivery across Pakistan. Your GlowMed products, delivered with care.
+              Fast and reliable delivery across Pakistan. Your Glowify products, delivered with care.
             </p>
           </div>
 
@@ -192,7 +192,7 @@ export default function ShippingPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Delivered</h3>
-                    <p className="text-sm text-muted-foreground">Sign for your package and enjoy your GlowMed products!</p>
+                    <p className="text-sm text-muted-foreground">Sign for your package and enjoy your Glowify products!</p>
                   </div>
                 </div>
               </div>

@@ -10,20 +10,20 @@ const faqs = [
     category: "Product Information",
     questions: [
       {
-        q: "What is the GlowMed Acne Face Wash?",
-        a: "GlowMed is a pharmaceutical-grade dual-acid face wash containing Salicylic Acid and Glycolic Acid, designed specifically for oily and acne-prone skin in hot, humid climates. It's a wash-off formula that targets excess oil, clogged pores, and active acne."
+        q: "What is the Glowify Acne Face Wash?",
+        a: "Glowify is a pharmaceutical-grade dual-acid face wash containing Salicylic Acid and Glycolic Acid, designed specifically for oily and acne-prone skin in hot, humid climates. It's a wash-off formula that targets excess oil, clogged pores, and active acne."
       },
       {
         q: "How is this different from regular face washes?",
-        a: "Unlike cosmetic face washes, GlowMed uses pharmaceutical-grade ingredients in clinically effective concentrations. The dual-acid formulation (BHA + AHA) provides superior oil control and acne treatment, specifically designed for Pakistan's climate. It's DRAP registered and manufactured under ISO & cGMP standards."
+        a: "Unlike cosmetic face washes, Glowify uses pharmaceutical-grade ingredients in clinically effective concentrations. The dual-acid formulation (BHA + AHA) provides superior oil control and acne treatment, specifically designed for Pakistan's climate. It's DRAP registered and manufactured under ISO & cGMP standards."
       },
       {
         q: "Does it contain any harmful ingredients?",
-        a: "No. GlowMed contains NO steroids, NO bleaching agents, NO fairness chemicals, and NO harmful additives. Every ingredient is pharmaceutical-grade and safe for external use."
+        a: "No. Glowify contains NO steroids, NO bleaching agents, NO fairness chemicals, and NO harmful additives. Every ingredient is pharmaceutical-grade and safe for external use."
       },
       {
         q: "Why do I need a complete system?",
-        a: "Acne control requires four steps: cleansing (GlowMed Face Wash), hydration (moisturizer), protection (sunscreen), and hygiene (face towel). Using all four ensures optimal results without irritation or dryness."
+        a: "Acne control requires four steps: cleansing (Glowify Face Wash), hydration (moisturizer), protection (sunscreen), and hygiene (face towel). Using all four ensures optimal results without irritation or dryness."
       }
     ]
   },
@@ -35,7 +35,7 @@ const faqs = [
         a: "Oil control improvement: 7-10 days. Acne reduction: 2-4 weeks. Some users may experience mild purging initially. Consistency is key — use daily for best results."
       },
       {
-        q: "How do I use GlowMed Face Wash?",
+        q: "How do I use Glowify Face Wash?",
         a: "Use twice daily (morning and evening). Wet face, apply small amount, massage gently, and rinse thoroughly. Follow with moisturizer and sunscreen (AM only)."
       },
       {
@@ -73,8 +73,8 @@ const faqs = [
     category: "Safety & Side Effects",
     questions: [
       {
-        q: "Is GlowMed safe for sensitive skin?",
-        a: "GlowMed is formulated for oily, acne-prone skin. If you have sensitive skin, start with once-daily use and gradually increase. Discontinue if severe irritation occurs."
+        q: "Is Glowify safe for sensitive skin?",
+        a: "Glowify is formulated for oily, acne-prone skin. If you have sensitive skin, start with once-daily use and gradually increase. Discontinue if severe irritation occurs."
       },
       {
         q: "What are the side effects?",
@@ -86,7 +86,7 @@ const faqs = [
       },
       {
         q: "What if I have severe acne?",
-        a: "GlowMed is effective for mild to moderate acne. For severe acne or cystic acne, please consult a dermatologist for comprehensive treatment."
+        a: "Glowify is effective for mild to moderate acne. For severe acne or cystic acne, please consult a dermatologist for comprehensive treatment."
       }
     ]
   }
@@ -114,7 +114,7 @@ export default function FAQPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about GlowMed and Dermafy. Can't find your answer? Contact us anytime.
+              Everything you need to know about Glowify and Dermafy. Can't find your answer? Contact us anytime.
             </p>
           </div>
 

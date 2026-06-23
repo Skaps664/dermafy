@@ -78,7 +78,7 @@ export default function TermsOfServicePage() {
               <div className="bg-card p-6 rounded-2xl boty-shadow">
                 <h3 className="font-medium text-foreground mb-3">Pharmaceutical Product</h3>
                 <p className="text-muted-foreground">
-                  GlowMed products are pharmaceutical-grade and DRAP registered. They are for external use only and not intended to diagnose, treat, cure, or prevent any disease. Consult a dermatologist for severe skin conditions.
+                  Glowify products are pharmaceutical-grade and DRAP registered. They are for external use only and not intended to diagnose, treat, cure, or prevent any disease. Consult a dermatologist for severe skin conditions.
                 </p>
               </div>
 

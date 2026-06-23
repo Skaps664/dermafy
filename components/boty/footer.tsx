@@ -6,7 +6,7 @@ import { Instagram, Facebook, Twitter } from "lucide-react"
 const footerLinks = {
   shop: [
     { name: "All Products", href: "/shop" },
-    { name: "GlowMed Face Wash", href: "/product/glowmed-acne-facewash" },
+    { name: "Glowify Face Wash", href: "/product/Glowify-acne-facewash" },
     { name: "Moisturizer", href: "/product/oil-free-moisturizer" },
     { name: "Sunscreen", href: "/product/daily-sunscreen-spf30" },
     { name: "Complete System", href: "/shop" }
@@ -30,7 +30,7 @@ export function Footer() {
     <footer className="bg-card pt-20 pb-10 relative overflow-hidden">
       {/* Giant Background Text */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0">
-        <span className="font-serif text-[200px] sm:text-[200px] md:text-[400px] lg:text-[400px] xl:text-[400px] font-bold text-white/20 whitespace-nowrap leading-none">
+        <span className="font-serif text-[120px] sm:text-[200px] md:text-[400px] lg:text-[400px] xl:text-[400px] font-bold text-white/20 whitespace-nowrap leading-none">
           Dermafy
         </span>
       </div>

@@ -29,7 +29,7 @@ export default function AboutPage() {
               In hot, humid, and polluted environments, oily and acne-prone skin faces unique challenges. Traditional cosmetic facewashes often fail because they're not designed for these conditions. Dermafy was created to fill this gap with pharmaceutical-grade solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Our GlowMed Acne Care System is simple, clinical, and effective. We don't make unrealistic promises or use harmful ingredients. Every product is designed with one goal: solving real skin problems.
+              Our Glowify Acne Care System is simple, clinical, and effective. We don't make unrealistic promises or use harmful ingredients. Every product is designed with one goal: solving real skin problems.
             </p>
           </div>
 

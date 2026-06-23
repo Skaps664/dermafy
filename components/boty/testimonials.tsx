@@ -9,8 +9,8 @@ const testimonials = [
     name: "Aisha K.",
     location: "Karachi",
     rating: 5,
-    text: "After years of struggling with oily, acne-prone skin in this heat, GlowMed finally works. My skin has never been clearer.",
-    product: "GlowMed Acne Face Wash"
+    text: "After years of struggling with oily, acne-prone skin in this heat, Glowify finally works. My skin has never been clearer.",
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const testimonials = [
     location: "Lahore",
     rating: 5,
     text: "The dual-acid formula is a game-changer. My pores feel clean and my acne has noticeably reduced in just 3 weeks.",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const testimonials = [
     location: "Islamabad",
     rating: 5,
     text: "Finally a facewash designed for the heat and humidity. No greasy feeling, just clear skin. Plus it's DRAP registered!",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const testimonials = [
     location: "Multan",
     rating: 5,
     text: "I love that this is pharmaceutical-grade and actually works. No false promises like other brands, just real results.",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const testimonials = [
     location: "Rawalpindi",
     rating: 5,
     text: "The complete system is simple but incredibly effective. Face wash, moisturizer, and sunscreen - that's all I need now.",
-    product: "Complete GlowMed System"
+    product: "Complete Glowify System"
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const testimonials = [
     location: "Peshawar",
     rating: 5,
     text: "My blackheads are finally gone after using the face wash for a month. The salicylic acid really penetrates the pores.",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 7,
@@ -58,7 +58,7 @@ const testimonials = [
     location: "Quetta",
     rating: 5,
     text: "As someone with very oily skin, this is the only routine that keeps me matte all day in summer.",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   },
   {
     id: 8,
@@ -74,21 +74,18 @@ const testimonials = [
     location: "Faisalabad",
     rating: 5,
     text: "Made in Pakistan with pharmaceutical standards. This is the clinical solution I've been looking for. Worth every rupee.",
-    product: "GlowMed Acne Face Wash"
+    product: "Glowify Acne Face Wash"
   }
 ]
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-  <div className="rounded-3xl p-6 bg-white mb-4 flex-shrink-0"
+  <div className="rounded-2xl md:rounded-3xl p-5 md:p-6 bg-white mb-4 flex-shrink-0"
     style={{
       boxShadow: "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px"
     }}
   >
-    {/* Stars */}
-    
-
     {/* Quote */}
-    <p className="text-foreground/80 leading-relaxed mb-4 text-pretty font-medium text-xl font-serif tracking-wide">
+    <p className="text-foreground/80 leading-relaxed mb-4 text-pretty font-medium text-base md:text-xl font-serif tracking-wide">
       &ldquo;{testimonial.text}&rdquo;
     </p>
 
@@ -98,7 +95,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
         <p className="text-foreground text-sm font-bold">{testimonial.name}</p>
         <p className="text-xs text-muted-foreground">{testimonial.location}</p>
       </div>
-      <span className="text-xs tracking-wide text-primary/70 bg-primary/5 px-2 py-1 rounded-full whitespace-nowrap">
+      <span className="text-[10px] md:text-xs tracking-wide text-primary/70 bg-primary/5 px-2 py-1 rounded-full whitespace-nowrap">
         {testimonial.product}
       </span>
     </div>
@@ -135,15 +132,15 @@ export function Testimonials() {
   }, [])
 
   return (
-    <section className="py-24 bg-background overflow-hidden pb-24 pt-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-background overflow-hidden pb-16 md:pb-24 pt-8 md:pt-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-16">
-          <span className={`text-sm tracking-[0.3em] uppercase text-primary mb-4 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+        <div ref={headerRef} className="text-center mb-10 md:mb-16">
+          <span className={`text-xs sm:text-sm tracking-[0.25em] uppercase text-primary mb-3 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
             Real Results
           </span>
-          <h2 className={`font-serif text-4xl leading-tight text-foreground text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
-            Trusted across Pakistan
+          <h2 className={`font-serif text-4xl sm:text-5xl leading-tight text-foreground text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
+            Loved across Pakistan
           </h2>
         </div>
 
@@ -154,7 +151,7 @@ export function Testimonials() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
           
           {/* Mobile - Single Column */}
-          <div className="md:hidden h-[600px]">
+          <div className="md:hidden h-[500px]">
             <div className="relative overflow-hidden h-full">
               <div className="animate-scroll-down hover:animate-scroll-down-slow">
                 {[...testimonials, ...testimonials].map((testimonial, index) => (

@@ -18,7 +18,7 @@ export default function ClinicalStandardsPage() {
               Clinical Standards
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              GlowMed products meet international pharmaceutical standards with rigorous quality control and regulatory compliance.
+              Glowify products meet international pharmaceutical standards with rigorous quality control and regulatory compliance.
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export default function ClinicalStandardsPage() {
           <div className="bg-primary text-primary-foreground p-12 rounded-3xl text-center">
             <h2 className="font-serif text-3xl mb-4">Our Commitment</h2>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              We maintain pharmaceutical standards because your skin deserves the same quality control as medicines. Every bottle of GlowMed is a promise of safety and efficacy.
+              We maintain pharmaceutical standards because your skin deserves the same quality control as medicines. Every bottle of Glowify is a promise of safety and efficacy.
             </p>
           </div>
         </div>

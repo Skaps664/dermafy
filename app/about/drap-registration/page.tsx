@@ -23,7 +23,7 @@ export default function DrapRegistrationPage() {
               DRAP Registration
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              GlowMed products are officially registered with Pakistan's Drug Regulatory Authority, your assurance of safety and quality.
+              Glowify products are officially registered with Pakistan's Drug Regulatory Authority, your assurance of safety and quality.
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function DrapRegistrationPage() {
           <div className="bg-primary text-primary-foreground p-12 rounded-3xl text-center">
             <h2 className="font-serif text-3xl mb-4">Your Safety, Our Priority</h2>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto mb-6">
-              DRAP registration is not just a certification — it's our commitment to your safety. Every GlowMed product you use has been thoroughly evaluated and approved by Pakistan's pharmaceutical authority.
+              DRAP registration is not just a certification — it's our commitment to your safety. Every Glowify product you use has been thoroughly evaluated and approved by Pakistan's pharmaceutical authority.
             </p>
             <p className="text-sm text-primary-foreground/80">
               Licensed pharmaceutical-grade skincare you can trust
