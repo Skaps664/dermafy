@@ -7,6 +7,7 @@ import { FeaturedProduct } from "@/components/boty/featured-product"
 import { Testimonials } from "@/components/boty/testimonials"
 import { CTABanner } from "@/components/boty/cta-banner"
 import { PromoBanner } from "@/components/boty/promo-banner"
+import { GlowifyGallery } from "@/components/boty/glowify-gallery"
 import { Footer } from "@/components/boty/footer"
 
 export default function HomePage() {
@@ -19,8 +20,9 @@ export default function HomePage() {
       {/* <ProductGrid /> */}
       <FeatureSection />
       <Testimonials />
-      <CTABanner />
+      {/* <CTABanner /> */}
       {/* <PromoBanner /> */}
+      <GlowifyGallery />
       <Footer />
     </main>
   )
