@@ -134,7 +134,7 @@ export default function ReturnsPage() {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Contact Us</h3>
                     <p className="text-sm text-muted-foreground">
-                      Email support@dermafy.pk or call +92 300 1234567 within 7 days of delivery. Provide your order number and reason for return.
+                      Email dermafypharma@gmail.com or call +92 339 0166442 within 7 days of delivery. Provide your order number and reason for return.
                     </p>
                   </div>
                 </div>

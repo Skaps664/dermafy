@@ -219,7 +219,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="space-y-2 text-primary-foreground/90">
               <p>Email: privacy@dermafy.pk</p>
-              <p>Phone: +92 300 1234567</p>
+              <p>Phone: +92 339 0166442</p>
             </div>
           </div>
         </div>

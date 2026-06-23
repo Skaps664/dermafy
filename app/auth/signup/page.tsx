@@ -146,7 +146,7 @@ export default function SignUpPage() {
                   onChange={handleChange}
                   required
                   className="w-full pl-12 pr-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                  placeholder="+92 300 1234567"
+                  placeholder="+92 339 0166442"
                 />
               </div>
             </div>

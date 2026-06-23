@@ -11,6 +11,13 @@ import { CreditCard, Package, ShoppingBag, Tag, CheckCircle2 } from "lucide-reac
 import Image from "next/image"
 import { auth, db } from "@/lib/firebase"
 import { collection, addDoc } from "firebase/firestore"
+import {
+  findOrCreateCustomer,
+  recordCustomerOrder,
+  generateOrderNumber,
+  normalizeEmail,
+  normalizePhone,
+} from "@/lib/customers"
 
 export default function CheckoutPage() {
   const { items, subtotal, clearCart } = useCart()
@@ -51,18 +58,34 @@ export default function CheckoutPage() {
 
     try {
       // Generate order number
-      const orderNumber = `ORD-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`
-      
-      // Get current user ID (if logged in)
-      const userId = auth.currentUser?.uid || "guest"
-      
+      const orderNumber = generateOrderNumber()
+
+      // Find existing customer (by email or phone) or create a new one. This
+      // keeps repeat customers linked to a single record so the admin panel
+      // and account lookup can aggregate their history.
+      const { id: customerId } = await findOrCreateCustomer({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        province: formData.province,
+      })
+
+      const now = new Date().toISOString()
+      const emailNormalized = normalizeEmail(formData.email)
+      const phoneNormalized = normalizePhone(formData.phone)
+
       // Save order to Firestore
       await addDoc(collection(db, "orders"), {
         orderNumber,
-        userId,
+        customerId,
+        userId: auth.currentUser?.uid || customerId,
         customerName: formData.name,
         email: formData.email,
+        emailNormalized,
         phone: formData.phone,
+        phoneNormalized,
         address: formData.address,
         city: formData.city,
         province: formData.province,
@@ -80,9 +103,23 @@ export default function CheckoutPage() {
         status: "pending",
         paymentMethod: "Cash on Delivery",
         couponCode: formData.couponCode || null,
-        createdAt: new Date().toISOString(),
+        trackingNumber: null,
+        notes: null,
+        createdAt: now,
+        updatedAt: now,
+        statusHistory: [{ status: "pending", at: now }],
       })
-      
+
+      // Update customer aggregates with this order's value.
+      await recordCustomerOrder(customerId, total, {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        province: formData.province,
+      })
+
       // Save order details for confirmation page
       setOrderDetails({
         name: formData.name,
@@ -90,10 +127,10 @@ export default function CheckoutPage() {
         phone: formData.phone,
         orderNumber
       })
-      
+
       // Clear cart
       clearCart()
-      
+
       // Show confirmation
       setOrderPlaced(true)
       setIsSubmitting(false)
@@ -262,7 +299,7 @@ export default function CheckoutPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 rounded-full border border-border bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 boty-transition"
-                          placeholder="+92 300 1234567"
+                          placeholder="+92 339 0166442"
                         />
                       </div>
 

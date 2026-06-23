@@ -25,20 +25,10 @@ export const metadata: Metadata = {
   keywords: ['brightening face wash', 'niacinamide cleanser', 'alpha arbutin', 'vitamin c face wash', 'oil control', 'glow', 'even skin tone', 'made in Pakistan', 'DRAP registered'],
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/dermafy-favicon.png', type: 'image/png' },
     ],
-    apple: '/apple-icon.png',
+    shortcut: '/dermafy-favicon.png',
+    apple: '/dermafy-favicon.png',
   },
 }
 

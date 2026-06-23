@@ -60,9 +60,8 @@ export function CartDrawer() {
 
                   {/* Product Details */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-serif text-base text-foreground mb-1 font-semibold">{item.name}</h3>
-                    <p className="text-muted-foreground mb-3 text-sm">{item.description}</p>
-                    
+                    <h3 className="font-serif text-base text-foreground mb-3 font-semibold">{item.name}</h3>
+
                     {/* Quantity Controls */}
                     <div className="flex items-center gap-3">
                       <div className="flex items-center border border-border rounded-full">

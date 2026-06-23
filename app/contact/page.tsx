@@ -61,8 +61,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Email</h3>
-                    <a href="mailto:support@dermafy.pk" className="text-muted-foreground hover:text-primary transition">
-                      support@dermafy.pk
+                    <a href="mailto:dermafypharma@gmail.com" className="text-muted-foreground hover:text-primary transition">
+                      dermafypharma@gmail.com
                     </a>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Phone</h3>
                     <a href="tel:+923001234567" className="text-muted-foreground hover:text-primary transition">
-                      +92 300 1234567
+                      +92 339 0166442
                     </a>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Location</h3>
                     <p className="text-muted-foreground">
-                      Karachi, Pakistan
+                      25000 Peshawar, Pakistan
                     </p>
                   </div>
                 </div>

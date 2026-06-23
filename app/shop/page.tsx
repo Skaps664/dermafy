@@ -20,40 +20,40 @@ const products = [
     image: "/glowify/glowify-hero-2.png",
     badge: "Bestseller",
     category: "system"
-  },
-  // Daily Moisturizer
-  {
-    id: "oil-free-moisturizer",
-    name: "Daily Moisturizer",
-    description: "Oil-free, non-comedogenic hydration with Niacinamide & Hyaluronic Acid",
-    price: 1250,
-    originalPrice: null,
-    image: "/images/products/cream-jars-colored.png",
-    badge: "Essential",
-    category: "system"
-  },
-  // Daily Sunscreen
-  {
-    id: "daily-sunscreen-spf30",
-    name: "Daily Sunscreen SPF 30+",
-    description: "Broad-spectrum gel sunscreen for oily skin, no white cast",
-    price: 1350,
-    originalPrice: null,
-    image: "/images/products/pump-bottles-lavender.png",
-    badge: "Essential",
-    category: "system"
-  },
-  // Gentle Face Towel
-  {
-    id: "microfiber-face-towel",
-    name: "Gentle Face Towel",
-    description: "Soft microfiber towel for acne-prone skin hygiene",
-    price: 450,
-    originalPrice: null,
-    image: "/images/products/jars-wooden-lid.png",
-    badge: null,
-    category: "complete-care"
   }
+  // Daily Moisturizer
+  // {
+  //   id: "oil-free-moisturizer",
+  //   name: "Daily Moisturizer",
+  //   description: "Oil-free, non-comedogenic hydration with Niacinamide & Hyaluronic Acid",
+  //   price: 1250,
+  //   originalPrice: null,
+  //   image: "/images/products/cream-jars-colored.png",
+  //   badge: "Essential",
+  //   category: "system"
+  // },
+  // // Daily Sunscreen
+  // {
+  //   id: "daily-sunscreen-spf30",
+  //   name: "Daily Sunscreen SPF 30+",
+  //   description: "Broad-spectrum gel sunscreen for oily skin, no white cast",
+  //   price: 1350,
+  //   originalPrice: null,
+  //   image: "/images/products/pump-bottles-lavender.png",
+  //   badge: "Essential",
+  //   category: "system"
+  // },
+  // // Gentle Face Towel
+  // {
+  //   id: "microfiber-face-towel",
+  //   name: "Gentle Face Towel",
+  //   description: "Soft microfiber towel for acne-prone skin hygiene",
+  //   price: 450,
+  //   originalPrice: null,
+  //   image: "/images/products/jars-wooden-lid.png",
+  //   badge: null,
+  //   category: "complete-care"
+  // }
 ]
 
 export default function ShopPage() {

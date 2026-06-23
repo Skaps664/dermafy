@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import {
   ChevronLeft,
   ChevronRight,
@@ -281,6 +281,7 @@ type AccordionSection = "ingredients" | "delivery"
 
 export default function ProductPage() {
   const params = useParams()
+  const router = useRouter()
   const productId = params.id as string
   const product = products[productId] || products["glowify-brightening-face-wash"]
 
@@ -325,6 +326,19 @@ export default function ProductPage() {
     }
     setIsAdded(true)
     setTimeout(() => setIsAdded(false), 2000)
+  }
+
+  const handleBuyNow = () => {
+    for (let i = 0; i < quantity; i++) {
+      addItem({
+        id: product.id,
+        name: product.name,
+        description: product.shortDescription,
+        price: product.price,
+        image: product.image
+      })
+    }
+    router.push("/checkout")
   }
 
   return (
@@ -493,59 +507,68 @@ export default function ProductPage() {
                 </div>
               )}
 
-              {/* Quantity Selector */}
-              {product.inStock && (
-                <div className="mb-6 md:mb-8">
+              {/* Quantity + Add to Cart row */}
+              {product.inStock ? (
+                <div className="mb-3 md:mb-4">
                   <label className="text-sm font-medium text-foreground mb-3 block">
                     Quantity
                   </label>
-                  <div className="inline-flex items-center gap-4 bg-card rounded-full px-2 py-2 boty-shadow">
+                  <div className="flex items-stretch gap-3">
+                    <div className="inline-flex items-center gap-2 bg-card rounded-full px-2 py-2 boty-shadow flex-shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition"
+                        aria-label="Decrease quantity"
+                      >
+                        <Minus className="w-4 h-4" />
+                      </button>
+                      <span className="w-8 text-center font-medium text-foreground">
+                        {quantity}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition"
+                        aria-label="Increase quantity"
+                      >
+                        <Plus className="w-4 h-4" />
+                      </button>
+                    </div>
                     <button
                       type="button"
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition"
-                      aria-label="Decrease quantity"
+                      onClick={handleAddToCart}
+                      className={`flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm tracking-wide boty-transition boty-shadow border ${
+                        isAdded
+                          ? "bg-primary/10 text-primary border-primary/30"
+                          : "bg-card text-foreground border-border hover:bg-muted"
+                      }`}
                     >
-                      <Minus className="w-4 h-4" />
-                    </button>
-                    <span className="w-8 text-center font-medium text-foreground">
-                      {quantity}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition"
-                      aria-label="Increase quantity"
-                    >
-                      <Plus className="w-4 h-4" />
+                      {isAdded ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          Added to Cart
+                        </>
+                      ) : (
+                        "Add to Cart"
+                      )}
                     </button>
                   </div>
                 </div>
-              )}
+              ) : null}
 
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10">
+              {/* Buy Now (primary CTA) */}
+              <div className="mb-8 md:mb-10">
                 {product.inStock ? (
                   <button
                     type="button"
-                    onClick={handleAddToCart}
-                    className={`flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm tracking-wide boty-transition boty-shadow ${
-                      isAdded
-                        ? "bg-primary/80 text-primary-foreground"
-                        : "bg-primary text-primary-foreground hover:bg-primary/90"
-                    }`}
+                    onClick={handleBuyNow}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-5 rounded-full text-base font-medium tracking-wide boty-transition hover:bg-primary/90 boty-shadow"
                   >
-                    {isAdded ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        Added to Cart
-                      </>
-                    ) : (
-                      "Add to Cart"
-                    )}
+                    Buy Now
                   </button>
                 ) : (
-                  <div className="flex-1 flex flex-col items-center justify-center gap-2 bg-muted/50 border border-border text-muted-foreground px-8 py-5 rounded-full text-sm tracking-wide text-center">
+                  <div className="w-full flex items-center justify-center gap-2 bg-muted/50 border border-border text-muted-foreground px-8 py-5 rounded-full text-sm tracking-wide text-center">
                     <span className="font-medium text-base text-foreground">
                       Coming Soon
                     </span>
