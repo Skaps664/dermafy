@@ -10,14 +10,14 @@ import { CTABanner } from "@/components/boty/cta-banner"
 import { useCart } from "@/components/boty/cart-context"
 
 const products = [
-  // Core Product - Glowify Acne Face Wash
+  // Core Product - Glowify Brightening Face Wash
   {
-    id: "Glowify-acne-facewash",
-    name: "Glowify Acne Face Wash",
-    description: "Dual-acid formula (Salicylic + Glycolic) for oily, acne-prone skin",
+    id: "glowify-brightening-face-wash",
+    name: "Glowify Brightening Face Wash",
+    description: "Niacinamide + Vitamin C + Alpha Arbutin for brighter, even-toned skin",
     price: 1500,
     originalPrice: null,
-    image: "/images/products/serum-bottles-1.png",
+    image: "/glowify/glowify-hero-2.png",
     badge: "Bestseller",
     category: "system"
   },
@@ -90,13 +90,13 @@ export default function ShopPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <span className="text-sm tracking-[0.3em] uppercase text-primary mb-4 block">
-              Glowify System
+              Glowify
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 text-balance">
-              Pharmaceutical Acne Control
+              The Brightening Face Wash
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mx-auto">
-              Complete skincare system for oily, acne-prone skin in hot, humid climates
+              One face wash. Five powerful actives. Real, healthy glow.
             </p>
           </div>
 

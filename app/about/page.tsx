@@ -15,10 +15,10 @@ export default function AboutPage() {
               Our Philosophy
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 text-balance">
-              Science Over Marketing
+              Real ingredients. Real glow.
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Dermafy is built on pharmaceutical logic, not cosmetic trends. We focus on problem-solving skincare for real skin conditions in Pakistan's challenging climate.
+              Dermafy is built on honest formulation — not shortcuts or marketing tricks. One face wash, five hero actives, real results for everyday skin.
             </p>
           </div>
 
@@ -26,10 +26,10 @@ export default function AboutPage() {
           <div className="prose prose-lg max-w-none mb-20">
             <h2 className="font-serif text-3xl text-foreground mb-6">Why Dermafy Exists</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              In hot, humid, and polluted environments, oily and acne-prone skin faces unique challenges. Traditional cosmetic facewashes often fail because they're not designed for these conditions. Dermafy was created to fill this gap with pharmaceutical-grade solutions.
+              Most skincare in Pakistan either over-promises with whitening creams or under-delivers with cosmetic cleansers that don’t do much. We built Dermafy to sit in the middle: ingredients backed by science, formulated for real skin in our climate.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Our Glowify Acne Care System is simple, clinical, and effective. We don't make unrealistic promises or use harmful ingredients. Every product is designed with one goal: solving real skin problems.
+              Glowify Brightening Face Wash is our hero product — a daily cleanser powered by Niacinamide, Alpha Arbutin, Vitamin C, Aloe Vera and Vitamin E Beads. No bleaching agents. No steroids. Just visible brightness, balanced oil and healthier-looking skin.
             </p>
           </div>
 
@@ -37,25 +37,25 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-20">
             <div className="bg-card p-8 rounded-3xl boty-shadow">
               <Beaker className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-serif text-2xl text-foreground mb-3">Pharmaceutical Logic</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-3">Real Ingredients</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Every ingredient is chosen based on clinical evidence, not marketing trends. We use proven actives like Salicylic Acid and Glycolic Acid in effective concentrations.
+                Niacinamide, Alpha Arbutin, Vitamin C, Aloe Vera and Vitamin E Beads — chosen for visible brightening, balanced oil and healthier skin. Every active is on the label and in effective amounts.
               </p>
             </div>
 
             <div className="bg-card p-8 rounded-3xl boty-shadow">
               <ShieldCheck className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-serif text-2xl text-foreground mb-3">Safety First</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-3">Safe to Use Daily</h3>
               <p className="text-muted-foreground leading-relaxed">
-                No steroids, no bleaching agents, no fairness chemicals. DRAP registered and manufactured in ISO & cGMP certified facilities.
+                No steroids. No bleaching agents. No hydroquinone or mercury. Just a gentle daily face wash for men and women, suitable for most skin types.
               </p>
             </div>
 
             <div className="bg-card p-8 rounded-3xl boty-shadow">
               <Leaf className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-serif text-2xl text-foreground mb-3">Climate-Specific</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-3">Built for Our Climate</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Designed specifically for Pakistan's hot, humid climate where oil control and acne management require specialized formulations.
+                Heat, humidity and dust dull the skin and trigger oiliness. Glowify is formulated for daily reality in Pakistan — refreshing, balancing and brightening from the very first wash.
               </p>
             </div>
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
               <Award className="w-10 h-10 text-primary mb-4" />
               <h3 className="font-serif text-2xl text-foreground mb-3">Honest Results</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We set realistic expectations: 7-10 days for oil control, 2-4 weeks for acne reduction. Consistency is key, not miracles.
+                Fresher skin from the first few washes. Visible brightening and improvement in acne marks over 2-4 weeks of daily use. No miracles — just consistency that works.
               </p>
             </div>
           </div>

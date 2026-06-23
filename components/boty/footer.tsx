@@ -5,11 +5,7 @@ import { Instagram, Facebook, Twitter } from "lucide-react"
 
 const footerLinks = {
   shop: [
-    { name: "All Products", href: "/shop" },
-    { name: "Glowify Face Wash", href: "/product/Glowify-acne-facewash" },
-    { name: "Moisturizer", href: "/product/oil-free-moisturizer" },
-    { name: "Sunscreen", href: "/product/daily-sunscreen-spf30" },
-    { name: "Complete System", href: "/shop" }
+    { name: "Glowify Face Wash", href: "/product/glowify-brightening-face-wash" },
   ],
   about: [
     { name: "Our Philosophy", href: "/about" },
@@ -41,7 +37,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <h2 className="font-serif text-3xl text-foreground mb-4">Dermafy</h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              Pharmaceutical-grade skincare built on science, not marketing trends. Effective solutions for oily, acne-prone skin.
+              Skincare built on real ingredients. Glowify Brightening Face Wash — brighter, balanced, healthier-looking skin every day.
             </p>
             <div className="flex gap-4">
               <a

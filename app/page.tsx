@@ -6,7 +6,7 @@ import { ProductGrid } from "@/components/boty/product-grid"
 import { FeaturedProduct } from "@/components/boty/featured-product"
 import { Testimonials } from "@/components/boty/testimonials"
 import { CTABanner } from "@/components/boty/cta-banner"
-import { Newsletter } from "@/components/boty/newsletter"
+import { PromoBanner } from "@/components/boty/promo-banner"
 import { Footer } from "@/components/boty/footer"
 
 export default function HomePage() {
@@ -14,13 +14,13 @@ export default function HomePage() {
     <main>
       <Header />
       <Hero />
-      <TrustBadges />
       <FeaturedProduct />
+      <TrustBadges />
       {/* <ProductGrid /> */}
       <FeatureSection />
       <Testimonials />
       <CTABanner />
-      <Newsletter />
+      <PromoBanner />
       <Footer />
     </main>
   )

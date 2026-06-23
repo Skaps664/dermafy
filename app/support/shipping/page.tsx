@@ -15,10 +15,10 @@ export default function ShippingPage() {
               Delivery Information
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 text-balance">
-              Shipping Policy
+              Free Shipping. Every Order.
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Fast and reliable delivery across Pakistan. Your Glowify products, delivered with care.
+              Free delivery across Pakistan — no minimum order. Your Glowify, delivered fast and with care.
             </p>
           </div>
 
@@ -91,23 +91,15 @@ export default function ShippingPage() {
                     <h3 className="font-medium text-foreground mb-1">Major Cities</h3>
                     <p className="text-sm text-muted-foreground">Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad</p>
                   </div>
-                  <span className="font-medium text-primary">3-5 Business Days</span>
+                  <span className="font-medium text-primary">2-3 Business Days</span>
                 </div>
 
                 <div className="p-6 flex justify-between items-center">
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Other Cities</h3>
-                    <p className="text-sm text-muted-foreground">Multan, Peshawar, Quetta, Hyderabad, Sialkot</p>
+                    <p className="text-sm text-muted-foreground">All other cities across Pakistan</p>
                   </div>
-                  <span className="font-medium text-primary">5-7 Business Days</span>
-                </div>
-
-                <div className="p-6 flex justify-between items-center">
-                  <div>
-                    <h3 className="font-medium text-foreground mb-1">Remote Areas</h3>
-                    <p className="text-sm text-muted-foreground">Rural and remote locations</p>
-                  </div>
-                  <span className="font-medium text-primary">7-10 Business Days</span>
+                  <span className="font-medium text-primary">3-5 Business Days</span>
                 </div>
               </div>
             </div>
@@ -121,16 +113,8 @@ export default function ShippingPage() {
                 <div className="flex items-start gap-4">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-medium text-foreground mb-1">Free Shipping</h3>
-                    <p className="text-muted-foreground">On all orders above Rs. 3,000</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-medium text-foreground mb-1">Standard Shipping</h3>
-                    <p className="text-muted-foreground">Rs. 150 for major cities | Rs. 250 for other areas</p>
+                    <h3 className="font-medium text-foreground mb-1">Free Shipping on Every Order</h3>
+                    <p className="text-muted-foreground">No minimum. No hidden fees. Across all of Pakistan.</p>
                   </div>
                 </div>
 
@@ -138,7 +122,7 @@ export default function ShippingPage() {
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Cash on Delivery</h3>
-                    <p className="text-muted-foreground">Available nationwide (additional Rs. 100 fee may apply)</p>
+                    <p className="text-muted-foreground">Pay in cash when your order arrives — available nationwide.</p>
                   </div>
                 </div>
               </div>

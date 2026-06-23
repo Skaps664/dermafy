@@ -9,72 +9,72 @@ const testimonials = [
     name: "Aisha K.",
     location: "Karachi",
     rating: 5,
-    text: "After years of struggling with oily, acne-prone skin in this heat, Glowify finally works. My skin has never been clearer.",
-    product: "Glowify Acne Face Wash"
+    text: "My skin actually looks brighter after a few weeks. The Vitamin E beads feel amazing on the face.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 2,
     name: "Fatima R.",
     location: "Lahore",
     rating: 5,
-    text: "The dual-acid formula is a game-changer. My pores feel clean and my acne has noticeably reduced in just 3 weeks.",
-    product: "Glowify Acne Face Wash"
+    text: "Finally something that controls oil and brightens at the same time. My old acne marks are fading too.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 3,
     name: "Hassan M.",
     location: "Islamabad",
     rating: 5,
-    text: "Finally a facewash designed for the heat and humidity. No greasy feeling, just clear skin. Plus it's DRAP registered!",
-    product: "Glowify Acne Face Wash"
+    text: "I'm a guy and I never thought a face wash could do this much. Skin feels fresh, not tight, and looks healthier.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 4,
     name: "Zara N.",
     location: "Multan",
     rating: 5,
-    text: "I love that this is pharmaceutical-grade and actually works. No false promises like other brands, just real results.",
-    product: "Glowify Acne Face Wash"
+    text: "It doesn't bleach or lighten unnaturally \u2014 it just makes my skin look more even and awake. Exactly what I wanted.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 5,
     name: "Ahmed S.",
     location: "Rawalpindi",
     rating: 5,
-    text: "The complete system is simple but incredibly effective. Face wash, moisturizer, and sunscreen - that's all I need now.",
-    product: "Complete Glowify System"
+    text: "Use it morning and night. Pores look smaller, less shine through the day. Worth every rupee.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 6,
     name: "Nimra P.",
     location: "Peshawar",
     rating: 5,
-    text: "My blackheads are finally gone after using the face wash for a month. The salicylic acid really penetrates the pores.",
-    product: "Glowify Acne Face Wash"
+    text: "Post-acne marks are noticeably lighter after a month. Niacinamide + Alpha Arbutin really do work together.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 7,
     name: "Omar T.",
     location: "Quetta",
     rating: 5,
-    text: "As someone with very oily skin, this is the only routine that keeps me matte all day in summer.",
-    product: "Glowify Acne Face Wash"
+    text: "Very oily skin here. This is the first wash that doesn't leave my face feeling stripped. Glow is real.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 8,
     name: "Saira U.",
     location: "Sukkur",
     rating: 5,
-    text: "The oil-free moisturizer is light but hydrating. My skin feels balanced for the first time. No breakouts!",
-    product: "Daily Moisturizer"
+    text: "I love that it has Aloe Vera in it. Calms my skin down and the dullness is genuinely gone.",
+    product: "Glowify Brightening Face Wash"
   },
   {
     id: 9,
     name: "Bilal W.",
     location: "Faisalabad",
     rating: 5,
-    text: "Made in Pakistan with pharmaceutical standards. This is the clinical solution I've been looking for. Worth every rupee.",
-    product: "Glowify Acne Face Wash"
+    text: "Made in Pakistan, proper ingredients list, actually delivers. My whole family uses it now.",
+    product: "Glowify Brightening Face Wash"
   }
 ]
 

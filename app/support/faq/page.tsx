@@ -10,20 +10,20 @@ const faqs = [
     category: "Product Information",
     questions: [
       {
-        q: "What is the Glowify Acne Face Wash?",
-        a: "Glowify is a pharmaceutical-grade dual-acid face wash containing Salicylic Acid and Glycolic Acid, designed specifically for oily and acne-prone skin in hot, humid climates. It's a wash-off formula that targets excess oil, clogged pores, and active acne."
+        q: "What is Glowify Brightening Face Wash?",
+        a: "Glowify is a daily brightening cleanser powered by Niacinamide, Alpha Arbutin, Vitamin C, Aloe Vera Gel and Vitamin E Beads. It deeply cleanses, controls excess oil, and promotes a brighter, more even-looking complexion."
       },
       {
-        q: "How is this different from regular face washes?",
-        a: "Unlike cosmetic face washes, Glowify uses pharmaceutical-grade ingredients in clinically effective concentrations. The dual-acid formulation (BHA + AHA) provides superior oil control and acne treatment, specifically designed for Pakistan's climate. It's DRAP registered and manufactured under ISO & cGMP standards."
+        q: "Does Glowify lighten or bleach my skin?",
+        a: "No. Glowify supports natural skin brightness, fades the appearance of dullness, and helps even out tone — but it never bleaches or alters your natural skin colour. No steroids, no hydroquinone, no harsh whitening agents."
       },
       {
-        q: "Does it contain any harmful ingredients?",
-        a: "No. Glowify contains NO steroids, NO bleaching agents, NO fairness chemicals, and NO harmful additives. Every ingredient is pharmaceutical-grade and safe for external use."
+        q: "What are the Vitamin E Beads?",
+        a: "Small moisturising capsules suspended in the wash. They dissolve as you cleanse, releasing antioxidant-rich Vitamin E that nourishes and softens the skin."
       },
       {
-        q: "Why do I need a complete system?",
-        a: "Acne control requires four steps: cleansing (Glowify Face Wash), hydration (moisturizer), protection (sunscreen), and hygiene (face towel). Using all four ensures optimal results without irritation or dryness."
+        q: "Is it suitable for men and women?",
+        a: "Yes. Glowify is designed for everyone and works on most skin types — oily, combination and normal."
       }
     ]
   },
@@ -31,20 +31,20 @@ const faqs = [
     category: "Usage & Results",
     questions: [
       {
-        q: "How long before I see results?",
-        a: "Oil control improvement: 7-10 days. Acne reduction: 2-4 weeks. Some users may experience mild purging initially. Consistency is key — use daily for best results."
+        q: "How often should I use Glowify?",
+        a: "Twice daily — morning and evening. Wet face, apply a small amount, massage gently in circular motions, then rinse thoroughly."
       },
       {
-        q: "How do I use Glowify Face Wash?",
-        a: "Use twice daily (morning and evening). Wet face, apply small amount, massage gently, and rinse thoroughly. Follow with moisturizer and sunscreen (AM only)."
+        q: "How soon will I see results?",
+        a: "Fresh, balanced skin: from the first few washes. Visible brightening and improvement in acne marks / uneven tone: usually 2-4 weeks of consistent daily use."
       },
       {
-        q: "Can I use it with other acne treatments?",
-        a: "Avoid combining with other exfoliating acids initially. If you're using prescription acne medications, consult your doctor first. Reduce frequency if irritation occurs."
+        q: "Will it help my acne marks?",
+        a: "Yes. Alpha Arbutin, Vitamin C and Niacinamide work together to help fade the appearance of post-acne marks and uneven tone over time."
       },
       {
-        q: "Why is sunscreen essential?",
-        a: "Glycolic Acid increases sun sensitivity. Sunscreen prevents post-acne dark spots, protects your skin barrier, and is crucial for preventing damage. Always use SPF 30+ during the day."
+        q: "Will it dry out my skin?",
+        a: "No. The formula contains Aloe Vera, Glycerin and Vitamin E Beads to hydrate while it cleanses. Skin feels soft and refreshed, not tight."
       }
     ]
   },
@@ -53,40 +53,40 @@ const faqs = [
     questions: [
       {
         q: "Where do you ship?",
-        a: "We currently ship across Pakistan to all major cities including Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, and more."
+        a: "We ship across Pakistan to all major cities including Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta and more."
       },
       {
         q: "How long does delivery take?",
-        a: "Delivery typically takes 3-5 business days for major cities and 5-7 business days for remote areas. You'll receive tracking information once your order ships."
+        a: "Major cities (Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad): 2-3 business days. All other cities across Pakistan: 3-5 business days. You'll receive tracking info as soon as your order ships."
       },
       {
         q: "What are the shipping charges?",
-        a: "Shipping costs vary by location. Free shipping on orders over Rs. 3,000. Standard rates apply for orders below this amount."
+        a: "Shipping is free on every order across Pakistan — no minimum, no hidden fees."
       },
       {
         q: "Can I track my order?",
-        a: "Yes! You'll receive a tracking number via email and SMS once your order is dispatched."
+        a: "Yes — you'll get a tracking number by email and SMS as soon as your order is dispatched."
       }
     ]
   },
   {
-    category: "Safety & Side Effects",
+    category: "Safety & Skin",
     questions: [
       {
-        q: "Is Glowify safe for sensitive skin?",
-        a: "Glowify is formulated for oily, acne-prone skin. If you have sensitive skin, start with once-daily use and gradually increase. Discontinue if severe irritation occurs."
+        q: "Is Glowify suitable for sensitive skin?",
+        a: "Glowify is gentle enough for most skin types. If your skin is highly sensitive, start with once-daily use and increase as your skin gets comfortable."
       },
       {
-        q: "What are the side effects?",
-        a: "Mild tingling, slight dryness, or initial purging (temporary acne increase) may occur. This is normal as skin adjusts. If irritation persists, reduce frequency or consult a dermatologist."
+        q: "Can I use it with other skincare?",
+        a: "Yes. Glowify is a wash-off cleanser and pairs well with most moisturisers, sunscreens and serums. Follow with sunscreen during the day."
       },
       {
-        q: "Can pregnant women use it?",
-        a: "While the product is for external use, we recommend consulting your doctor before using any new skincare during pregnancy or breastfeeding."
+        q: "Can pregnant or breastfeeding women use it?",
+        a: "Although Glowify is a wash-off product for external use, we always recommend checking with your doctor before adding any new skincare during pregnancy or breastfeeding."
       },
       {
-        q: "What if I have severe acne?",
-        a: "Glowify is effective for mild to moderate acne. For severe acne or cystic acne, please consult a dermatologist for comprehensive treatment."
+        q: "What if my skin reacts?",
+        a: "Mild tingling or slight adjustment can happen as your skin gets used to actives. If irritation persists, reduce frequency or stop use and consult a dermatologist."
       }
     ]
   }

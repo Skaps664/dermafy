@@ -9,11 +9,11 @@ import { useCart } from "./cart-context"
 type Category = "complete-care"
 
 const products = [
-  // Core Product - Glowify Acne Face Wash
+  // Core Product - Glowify Brightening Face Wash
   {
-    id: "Glowify-acne-facewash",
-    name: "Glowify Acne Face Wash",
-    description: "Dual-acid formula (Salicylic + Glycolic) for oily, acne-prone skin",
+    id: "glowify-brightening-face-wash",
+    name: "Glowify Brightening Face Wash",
+    description: "Niacinamide + Vitamin C + Alpha Arbutin for brighter, even-toned skin",
     price: 1500,
     originalPrice: null,
     image: "/glowify/glowify-hero-2.png",

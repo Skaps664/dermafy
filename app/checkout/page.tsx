@@ -148,7 +148,7 @@ export default function CheckoutPage() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Estimated Delivery</p>
-                    <p className="font-semibold">3-5 Business Days</p>
+                    <p className="font-semibold">2-5 Business Days</p>
                   </div>
                 </div>
               </div>
@@ -458,7 +458,7 @@ export default function CheckoutPage() {
                 {/* Delivery Info */}
                 <div className="mt-6 p-4 bg-primary/5 rounded-2xl">
                   <p className="text-xs text-muted-foreground">
-                    <strong className="text-foreground">Free Delivery</strong> on all orders. Estimated delivery: 3-5 business days.
+                    <strong className="text-foreground">Free Delivery</strong> on every order. Major cities: 2-3 business days. Other cities: 3-5 business days.
                   </p>
                 </div>
               </div>

@@ -2,28 +2,28 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { Recycle, Leaf, Flower2, Globe } from "lucide-react"
+import { Sparkles, Droplets, ShieldCheck, FlaskConical } from "lucide-react"
 
 const features = [
   {
-    icon: Recycle,
-    title: "DRAP Enlisted",
-    description: "Registered with Pakistan's regulatory authority"
+    icon: Sparkles,
+    title: "Brightens Dull Skin",
+    description: "Alpha Arbutin + Vitamin C for visible radiance"
   },
   {
-    icon: Leaf,
-    title: "Pharmaceutical Grade",
-    description: "ISO & cGMP certified manufacturing"
+    icon: Droplets,
+    title: "Hydrating Cleanse",
+    description: "Vitamin E beads + Aloe leave skin soft"
   },
   {
-    icon: Flower2,
-    title: "No Steroids",
-    description: "No bleaching agents or harmful additives"
+    icon: ShieldCheck,
+    title: "Controls Excess Oil",
+    description: "Niacinamide balances sebum & refines pores"
   },
   {
-    icon: Globe,
-    title: "Clinically Proven",
-    description: "Designed for real skin problems"
+    icon: FlaskConical,
+    title: "Dermatologist Formulated",
+    description: "Daily-safe, suitable for all skin types"
   }
 ]
 
@@ -117,10 +117,10 @@ export function FeatureSection() {
               <div className="flex items-start gap-3">
                 <div>
                   <h3 className="text-lg md:text-xl text-foreground mb-1.5 font-medium">
-                    Dual-Acid Formula
+                    Brightening Actives
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Salicylic + glycolic acids for oil control and clear pores.
+                    Niacinamide, Alpha Arbutin & Vitamin C for visible glow.
                   </p>
                 </div>
               </div>
@@ -145,23 +145,23 @@ export function FeatureSection() {
             
             <div className="relative z-10">
               <h3 className="text-3xl md:text-4xl text-white mb-2">
-                Pharmaceutical
+                Bright. Even.
               </h3>
               <h3 className="text-2xl md:text-3xl text-white/70 mb-4">
-                Clinical Grade
+                Healthy-looking.
               </h3>
               
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Leaf className="w-4 h-4 flex-shrink-0" />
-                  <span>Dual-Acid Formula</span>
+                  <Sparkles className="w-4 h-4 flex-shrink-0" />
+                  <span>Niacinamide & Vitamin C</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Flower2 className="w-4 h-4 flex-shrink-0" />
-                  <span>Targets Oil & Acne</span>
+                  <Droplets className="w-4 h-4 flex-shrink-0" />
+                  <span>Aloe Vera + Vitamin E Beads</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Globe className="w-4 h-4 flex-shrink-0" />
+                  <ShieldCheck className="w-4 h-4 flex-shrink-0" />
                   <span>Made in Pakistan</span>
                 </div>
               </div>
@@ -190,13 +190,13 @@ export function FeatureSection() {
             
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">
               <div className="inline-flex items-center justify-center w-10 h-10 mb-3">
-                <Recycle className="w-8 h-8 text-black" />
+                <Sparkles className="w-8 h-8 text-black" />
               </div>
               <h3 className="font-sans text-base mb-1 text-black">
-                Eco-Friendly
+                Glow-boosting
               </h3>
               <h3 className="text-2xl md:text-3xl mb-2 text-black">
-                Packaging
+                Vitamin E Beads
               </h3>
             </div>
           </div>
@@ -232,13 +232,13 @@ export function FeatureSection() {
             style={{ transitionDelay: '100ms' }}
           >
             <span className={`text-xs sm:text-sm tracking-[0.25em] uppercase text-primary mb-3 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
-              Why This Works
+              Why It Works
             </span>
             <h2 className={`font-serif text-4xl sm:text-5xl leading-tight text-foreground mb-4 md:mb-6 text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
-              Science, not gentleness.
+              Five actives. One face wash.
             </h2>
             <p className={`text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
-              Acids that work where cosmetics fail. Clinical results, gentle on the barrier.
+              Brightens, balances, hydrates. Niacinamide, Alpha Arbutin, Vitamin C, Aloe & Vitamin E beads — working together every wash.
             </p>
 
             {/* Feature Cards */}

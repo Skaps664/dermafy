@@ -40,27 +40,27 @@ export function Hero() {
                 className="block animate-blur-in opacity-0 font-semibold text-3xl sm:text-4xl md:text-5xl"
                 style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
               >
-                When gentle fails,
+                Cleanse. Brighten.
               </span>
               <span
                 className="block animate-blur-in opacity-0 font-semibold text-5xl sm:text-6xl md:text-7xl xl:text-9xl"
                 style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
               >
-                science works.
+                Glow.
               </span>
             </h2>
             <p
               className="text-base sm:text-lg leading-relaxed mb-8 max-w-sm mx-auto lg:mx-0 text-black animate-blur-in opacity-0"
               style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
             >
-              Dual-acid acne face wash. Built for oily, acne-prone skin.
+              Daily brightening face wash with Niacinamide, Vitamin C & Alpha Arbutin.
             </p>
             <div
               className="flex justify-center lg:justify-start animate-blur-in opacity-0"
               style={{ animationDelay: '1s', animationFillMode: 'forwards' }}
             >
               <Link
-                href="/product/Glowify-acne-facewash"
+                href="/product/glowify-brightening-face-wash"
                 className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-primary/90 boty-shadow"
               >
                 Shop Glowify

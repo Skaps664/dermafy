@@ -27,10 +27,10 @@ export function Header() {
           {/* Desktop Navigation - Left */}
           <div className="hidden lg:flex items-center gap-8">
             <Link
-              href="/shop"
+              href="/product/glowify-brightening-face-wash"
               className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
             >
-              Shop
+              Buy Now
             </Link>
             <Link
               href="/about"

@@ -19,10 +19,10 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Dermafy — Pharmaceutical Acne Control',
-  description: 'Glowify Acne Care System: pharmaceutical-grade skincare for oily, acne-prone skin in hot, humid climates.',
+  title: 'Dermafy — Glowify Brightening Face Wash',
+  description: 'Glowify Brightening Face Wash combines Niacinamide, Alpha Arbutin, Vitamin C, Aloe Vera, and Vitamin E Beads to deeply cleanse, control oil, refresh skin, and promote a brighter, healthier-looking complexion.',
   generator: 'v0.app',
-  keywords: ['acne treatment', 'pharmaceutical skincare', 'salicylic acid', 'glycolic acid', 'oily skin', 'acne-prone', 'DRAP registered'],
+  keywords: ['brightening face wash', 'niacinamide cleanser', 'alpha arbutin', 'vitamin c face wash', 'oil control', 'glow', 'even skin tone', 'made in Pakistan', 'DRAP registered'],
   icons: {
     icon: [
       {

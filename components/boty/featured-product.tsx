@@ -7,20 +7,20 @@ import { ShoppingBag, Check } from "lucide-react"
 import { useCart } from "./cart-context"
 
 const product = {
-  id: "Glowify-acne-facewash",
-  name: "Glowify Acne Face Wash",
-  tagline: "The Hero Product",
+  id: "glowify-brightening-face-wash",
+  name: "Glowify Brightening Face Wash",
+  tagline: "Daily Brightening Cleanser",
   description:
-    "Dual-acid formula (Salicylic + Glycolic) for oily, acne-prone skin.",
+    "Niacinamide, Alpha Arbutin, Vitamin C, Aloe Vera & Vitamin E Beads. For brighter, fresher, healthier-looking skin.",
   price: 1500,
   originalPrice: null,
   image: "/glowify/glowify-hero-2.png",
   badge: "Bestseller",
   highlights: [
-    "Dual-acid deep clean",
-    "Dermatologist approved",
-    "Gentle on skin barrier",
-    "For oily & acne-prone skin"
+    "Brightens dull skin",
+    "Fades acne marks & evens tone",
+    "Controls excess oil",
+    "Hydrates with Vitamin E beads"
   ]
 }
 
@@ -109,7 +109,7 @@ export function FeaturedProduct() {
                 : {}
             }
           >
-            One product. Real results.
+            One product. Real glow.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export function FeaturedProduct() {
             </ul>
 
             {/* Price */}
-            <div className="flex items-baseline gap-3 mb-6 md:mb-8">
+            <div className="flex items-baseline flex-wrap gap-x-3 gap-y-1 mb-6 md:mb-8">
               <span className="font-serif text-2xl sm:text-3xl text-foreground">
                 Rs. {product.price}
               </span>
@@ -176,6 +176,9 @@ export function FeaturedProduct() {
                   Rs. {product.originalPrice}
                 </span>
               )}
+              <span className="text-sm text-primary font-medium">
+                + Free Shipping
+              </span>
             </div>
 
             {/* Actions */}
