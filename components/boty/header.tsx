@@ -53,13 +53,7 @@ export function Header() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4">
-            <button
-              type="button"
-              className="p-2 text-foreground/70 hover:text-foreground boty-transition"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
+            
             <Link
               href="/account"
               className="hidden sm:block p-2 text-foreground/70 hover:text-foreground boty-transition"

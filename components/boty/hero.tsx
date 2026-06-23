@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Users } from "lucide-react"
 
 export function Hero() {
   return (
@@ -35,6 +35,15 @@ export function Hero() {
       <div className="relative z-10 w-full pt-24 lg:pt-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="w-full lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+            <div
+              className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full mb-5 animate-blur-in opacity-0"
+              style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span className="text-[11px] sm:text-xs tracking-[0.18em] uppercase font-medium">
+                For Men &amp; Women
+              </span>
+            </div>
             <h2 className="font-serif leading-[1.05] mb-6 text-balance text-black">
               <span
                 className="block animate-blur-in opacity-0 font-semibold text-3xl sm:text-4xl md:text-5xl"

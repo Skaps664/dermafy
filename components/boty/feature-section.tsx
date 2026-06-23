@@ -136,7 +136,7 @@ export function FeatureSection() {
           >
             {/* Background Image */}
             <Image
-              src="/images/0ed61900-dd29-4dd2-bc2d-abc2db54c352.png"
+              src="/glowify/top-right.png"
               alt="Natural ingredients"
               fill
               className="object-cover"
@@ -144,23 +144,23 @@ export function FeatureSection() {
 
             
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl text-white mb-2">
+              <h3 className="text-3xl md:text-4xl text-black mb-2">
                 Bright. Even.
               </h3>
-              <h3 className="text-2xl md:text-3xl text-white/70 mb-4">
+              <h3 className="text-2xl md:text-3xl text-black/70 mb-4">
                 Healthy-looking.
               </h3>
               
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white/90 text-sm">
+                <div className="flex items-center gap-2 text-black/90 text-sm">
                   <Sparkles className="w-4 h-4 flex-shrink-0" />
                   <span>Niacinamide & Vitamin C</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm">
+                <div className="flex items-center gap-2 text-black/90 text-sm">
                   <Droplets className="w-4 h-4 flex-shrink-0" />
                   <span>Aloe Vera + Vitamin E Beads</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm">
+                <div className="flex items-center gap-2 text-black/90 text-sm">
                   <ShieldCheck className="w-4 h-4 flex-shrink-0" />
                   <span>Made in Pakistan</span>
                 </div>
@@ -176,26 +176,24 @@ export function FeatureSection() {
             style={{ transitionDelay: '200ms' }}
           >
             {/* Background Video */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
-            >
-              <source src="/images/a0b7c364-afa9-4afa-9716-45718578cc01.mp4" type="video/mp4" />
-            </video>
+            <Image
+              src="/glowify/beads.png"
+              alt="Natural ingredients"
+              fill
+              className="object-cover"
+            />
+
             {/* Overlay for text readability */}
             <div className="absolute inset-0 bg-transparent" />
             
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">
               <div className="inline-flex items-center justify-center w-10 h-10 mb-3">
-                <Sparkles className="w-8 h-8 text-black" />
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-sans text-base mb-1 text-black">
+              <h3 className="font-sans text-base mb-1 text-white">
                 Glow-boosting
               </h3>
-              <h3 className="text-2xl md:text-3xl mb-2 text-black">
+              <h3 className="text-2xl md:text-3xl mb-2 text-white">
                 Vitamin E Beads
               </h3>
             </div>

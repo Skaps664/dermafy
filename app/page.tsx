@@ -20,7 +20,7 @@ export default function HomePage() {
       <FeatureSection />
       <Testimonials />
       <CTABanner />
-      <PromoBanner />
+      {/* <PromoBanner /> */}
       <Footer />
     </main>
   )

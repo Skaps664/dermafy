@@ -40,7 +40,7 @@ export function CTABanner() {
         >
           {/* Background Image */}
           <Image
-            src="/images/bf965cf4-e728-4e72-ab1b-16b1cd8f1822.png"
+            src="/glowify/glow-image-right.png"
             alt="Natural ingredients"
             fill
             className="object-cover"

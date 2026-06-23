@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useParams } from "next/navigation"
 import {
   ChevronLeft,
+  ChevronRight,
   Minus,
   Plus,
   ChevronDown,
@@ -46,6 +47,7 @@ type Product = {
   price: number
   originalPrice: number | null
   image: string
+  gallery?: string[]
   sizes: string[]
   benefits: string[]
   howItWorks: Step[]
@@ -70,19 +72,23 @@ const products: Record<string, Product> = {
     price: 1500,
     originalPrice: null,
     image: "/glowify/glowify-hero-2.png",
+    gallery: [
+      "/glowify/glowify-hero-2.png",
+      "/glowify/glof-1.png",
+      "/glowify/glof-2.png",
+      "/glowify/glof-3.png",
+      "/glowify/glof-4.png",
+      "/glowify/glof-5.png"
+    ],
     sizes: ["100ml"],
     benefits: [
       "Deeply cleanses dirt, oil & impurities",
       "Helps brighten dull, tired skin",
-      "Supports a more even skin tone",
       "Helps improve appearance of acne marks",
       "Controls excess oil production",
       "Provides antioxidant protection",
-      "Hydrates while cleansing",
       "Refreshes and revitalises skin",
-      "Leaves skin smooth and soft",
-      "Suitable for daily use, all skin types",
-      "For both men and women"
+      "Leaves skin smooth and soft"
     ],
     howItWorks: [
       {
@@ -285,11 +291,23 @@ export default function ProductPage() {
   )
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [isAdded, setIsAdded] = useState(false)
+  const [activeImage, setActiveImage] = useState(0)
   const { addItem } = useCart()
+
+  const gallery =
+    product.gallery && product.gallery.length > 0
+      ? product.gallery
+      : [product.image]
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setActiveImage(0)
   }, [productId])
+
+  const prevImage = () =>
+    setActiveImage((i) => (i - 1 + gallery.length) % gallery.length)
+  const nextImage = () =>
+    setActiveImage((i) => (i + 1) % gallery.length)
 
   const toggleAccordion = (section: AccordionSection) => {
     setOpenAccordion(openAccordion === section ? null : section)
@@ -325,15 +343,84 @@ export default function ProductPage() {
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
-            {/* Product Image */}
-            <div className="relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden bg-card boty-shadow">
-              <Image
-                src={product.image || "/placeholder.svg"}
-                alt={product.name}
-                fill
-                className="object-cover"
-                priority
-              />
+            {/* Product Gallery */}
+            <div className="space-y-3 md:space-y-4">
+              <div className="group relative aspect-square rounded-2xl md:rounded-3xl overflow-hidden bg-card boty-shadow">
+                {gallery.map((src, idx) => (
+                  <Image
+                    key={src}
+                    src={src || "/placeholder.svg"}
+                    alt={`${product.name} — view ${idx + 1}`}
+                    fill
+                    priority={idx === 0}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className={`object-cover transition-opacity duration-500 ease-out ${
+                      activeImage === idx ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+
+                {gallery.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={prevImage}
+                      aria-label="Previous image"
+                      className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-background/80 backdrop-blur-sm text-foreground flex items-center justify-center boty-transition hover:bg-background boty-shadow opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={nextImage}
+                      aria-label="Next image"
+                      className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-background/80 backdrop-blur-sm text-foreground flex items-center justify-center boty-transition hover:bg-background boty-shadow opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Mobile dot indicator */}
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 md:hidden">
+                      {gallery.map((_, i) => (
+                        <span
+                          key={i}
+                          className={`h-1.5 rounded-full boty-transition ${
+                            activeImage === i
+                              ? "w-5 bg-primary"
+                              : "w-1.5 bg-foreground/30"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {gallery.length > 1 && (
+                <div className="grid grid-cols-6 gap-2 md:gap-3">
+                  {gallery.map((src, idx) => (
+                    <button
+                      key={src}
+                      type="button"
+                      onClick={() => setActiveImage(idx)}
+                      aria-label={`View image ${idx + 1}`}
+                      className={`relative aspect-square rounded-lg md:rounded-xl overflow-hidden bg-card boty-transition ${
+                        activeImage === idx
+                          ? "ring-2 ring-primary ring-offset-2 ring-offset-background"
+                          : "ring-1 ring-border opacity-70 hover:opacity-100"
+                      }`}
+                    >
+                      <Image
+                        src={src}
+                        alt=""
+                        fill
+                        sizes="120px"
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Buy Box */}
